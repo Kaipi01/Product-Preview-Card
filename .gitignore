@@ -1,0 +1,16 @@
+
+*.sketch
+*.fig
+*.xd
+
+.DS_Store
+.prettierignore
+
+.cache
+dist/
+node_modules/
+design/
+
+style-quide.md
+README-project.md
+README-template.md

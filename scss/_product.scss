@@ -1,0 +1,126 @@
+@use "./variables" as var;
+
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&display=swap");
+
+.product {
+  background-color: var.$White;
+  border-radius: 10px;
+  display: flex;
+  max-height: 500px;
+  max-width: 700px;
+  width: 90%;
+  transition: all 0.7s ease-out;
+
+  @media (max-width: var.$BreakPoint) {
+    max-height: max-content;
+    flex-direction: column;
+    margin: 30px 0;
+  }
+
+  &:hover {
+    box-shadow: var.$Very-Dark-Cyan 0px 30px 90px;
+  }
+
+  &__presentation {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    min-width: 350px;
+    min-height: max-content;
+    overflow: hidden;
+
+    @media (max-width: var.$BreakPoint) {
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      border-bottom-left-radius: 0;
+      min-width: 100%;
+    }
+
+    &Img {
+      transition: all 0.7s ease-out;
+      width: 100%;
+
+      &:hover {
+        scale: 1.1;
+      }
+
+      &Desktop {
+        @media (max-width: var.$BreakPoint) {
+          display: none;
+        }
+      }
+
+      &Mobile {
+        display: none;
+        @media (max-width: var.$BreakPoint) {
+          display: block;
+        }
+      }
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding: 40px;
+
+    @media (max-width: 500px) {
+      padding: 25px;
+    }
+  }
+
+  &__header {
+    line-height: 1;
+  }
+
+  &__type {
+    letter-spacing: 5px;
+    margin-bottom: 25px;
+  }
+
+  &__name {
+    color: var.$Very-Dark-Blue;
+    font-family: "Fraunces", serif;
+    font-size: 2.4rem;
+  }
+
+  &__description {
+    font-size: 1.05rem;
+    line-height: 1.4;
+  }
+
+  &__price {
+    align-items: center;
+    display: flex;
+    gap: 30px;
+
+    &Current {
+      color: var.$Dark-Cyan;
+      font-family: "Fraunces", serif;
+      font-size: 2.4rem;
+    }
+  }
+
+  &__buyBtn {
+    align-items: center;
+    background-color: var.$Dark-Cyan;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    color: var.$White;
+    display: flex;
+    font-size: 1.1rem;
+    font-weight: bold;
+    gap: 10px;
+    justify-content: center;
+    padding: 16px 0;
+    transition: all 0.3s ease-in-out;
+    width: 100%;
+
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: var.$Very-Dark-Cyan;
+    }
+  }
+}
